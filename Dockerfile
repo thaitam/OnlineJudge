@@ -1,6 +1,6 @@
 FROM python:3.7-alpine3.9
 RUN pip freeze > requirements.txt
-COPY requirements.txt /home/OnlineJudge/deploy/requirements.txt
+COPY requirements.txt ./deploy/requirements.txt
 
 ENV OJ_ENV production
 ADD . /app
