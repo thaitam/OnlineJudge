@@ -6,7 +6,7 @@ ADD . /app
 WORKDIR /app
 COPY requirements.txt /tmp/
 RUN pip install --requirement /tmp/requirements.txt
-HEALTHCHECK --interval=5s --retries=3 CMD python2 /deploy/health_check.py
+HEALTHCHECK --interval=5s --retries=3 CMD python2 /app/deploy/health_check.py
 
 RUN apk add --update --no-cache build-base nginx openssl curl unzip supervisor jpeg-dev zlib-dev postgresql-dev freetype-dev && \
     apk del build-base --purge
