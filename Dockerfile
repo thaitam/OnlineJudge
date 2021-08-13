@@ -1,8 +1,8 @@
 FROM python:3.7-alpine3.9
 
 ENV OJ_ENV production
+ADD /home/OnlineJudge /app
 WORKDIR /app
-COPY . .
 HEALTHCHECK --interval=5s --retries=3 CMD python3 /app/deploy/health_check.py
 
 RUN apk add --update --no-cache build-base nginx openssl curl unzip supervisor jpeg-dev zlib-dev postgresql-dev freetype-dev && \
