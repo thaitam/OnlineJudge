@@ -2,8 +2,8 @@ FROM python:3.7-alpine3.9
 
 ENV OJ_ENV production
 
-ADD . /OnlineJudge
-WORKDIR /OnlineJudge
+ADD . /app
+WORKDIR /app
 COPY requirements.txt /tmp/
 RUN pip install --requirement /tmp/requirements.txt
 HEALTHCHECK --interval=5s --retries=3 CMD python2 /deploy/health_check.py
