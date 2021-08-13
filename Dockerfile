@@ -1,7 +1,7 @@
 FROM python:3.7-alpine3.9
 
 ENV OJ_ENV production
-ADD OnlineJudge /app
+ADD . /app
 WORKDIR /app
 HEALTHCHECK --interval=5s --retries=3 CMD python3 /app/deploy/health_check.py
 
